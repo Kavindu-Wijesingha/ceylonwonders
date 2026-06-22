@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Experiences — Ceylon Wonders</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .exp-section { padding: 80px 0 96px; }
+    .exp-category { margin-bottom: 72px; }
+    .exp-category-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 36px; padding-bottom: 16px; border-bottom: 1px solid #E0DDD6; }
+    .exp-category-header h2 { font-size: clamp(24px, 3vw, 34px); color: var(--green-dark); }
+    .exp-category-header .see-all { font-size: 14px; font-weight: 700; color: var(--green-mid); white-space: nowrap; }
+    .exp-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+
+    .exp-full-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    .exp-full-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+    .exp-full-card .card-img { height: 220px; position: relative; overflow: hidden; }
+    .exp-full-card .card-img img { height: 100%; transition: transform 0.5s ease; }
+    .exp-full-card:hover .card-img img { transform: scale(1.06); }
+    .exp-full-card .card-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+    .exp-full-card .card-body h3 { font-size: 20px; color: var(--green-dark); margin-bottom: 8px; }
+    .exp-full-card .card-body p { font-size: 14px; color: var(--text-muted); line-height: 1.7; flex: 1; }
+    .exp-card-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 20px; padding-top: 16px; border-top: 1px solid #F0EBE0; }
+    .exp-duration { font-size: 12px; font-weight: 700; color: var(--text-muted); }
+    .exp-duration span { color: var(--green-mid); }
+
+    .highlight-strip {
+      background: var(--green-dark);
+      padding: 72px 0;
+    }
+    .highlight-strip-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .hl-card { text-align: center; padding: 32px 20px; border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-lg); }
+    .hl-icon { font-size: 36px; margin-bottom: 16px; display: block; }
+    .hl-card h4 { font-family: 'Lato', sans-serif; font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+    .hl-card p { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.7; }
+
+    @media (max-width: 900px) {
+      .exp-cards { grid-template-columns: 1fr 1fr; }
+      .highlight-strip-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .exp-cards { grid-template-columns: 1fr; }
+      .highlight-strip-grid { grid-template-columns: 1fr 1fr; }
+      .exp-category-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><div class="nav-logo-icon">🌿</div><span class="nav-logo-text">Ceylon<span>Wonders</span></span></a>
+      <div class="nav-links">
+        <a href="index.html">Home</a><a href="destinations.html">Destinations</a><a href="experiences.html" class="active">Experiences</a><a href="gallery.html">Gallery</a><a href="about.html">About</a><a href="contact.html" class="nav-cta">Plan Trip</a>
+      </div>
+      <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+    <div class="nav-mobile" id="nav-mobile"><a href="index.html">Home</a><a href="destinations.html">Destinations</a><a href="experiences.html">Experiences</a><a href="gallery.html">Gallery</a><a href="about.html">About</a><a href="contact.html">Plan Trip</a></div>
+  </nav>
+  <div style="height:72px;"></div>
+
+  <div class="page-hero">
+    <div class="page-hero-bg" style="background-image:url('images/ea7fd3584b02951e19fb65198f73b5305e2ffb70-3840x2581.avif');"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="container"><div class="page-hero-content"><h1>Experiences</h1><p>Handcrafted adventures that go beyond sightseeing.</p></div></div>
+  </div>
+
+  <section class="exp-section">
+    <div class="container">
+
+      <!-- WILDLIFE -->
+      <div class="exp-category">
+        <div class="exp-category-header">
+          <div><span class="section-label" style="margin-bottom:4px;">🐘 Wildlife</span><h2>Safari & Nature</h2></div>
+          <a href="contact.html" class="see-all">Book a Safari →</a>
+        </div>
+        <div class="exp-cards">
+          <div class="exp-full-card">
+            <div class="card-img"><img src="images/a8.jpg" alt="Yala Leopard Safari"/></div>
+            <div class="card-body">
+              <span class="card-tag">Wildlife</span>
+              <h3>Yala Leopard Safari</h3>
+              <p>Dawn game drive in Yala's Block 1 — the zone with the highest leopard density on earth. Your naturalist guide reads the landscape to find elusive cats, elephants, and more.</p>
+              <div class="exp-card-footer"><div class="exp-duration">Duration: <span>Full day</span></div><a href="contact.html" class="btn-primary" style="padding:8px 16px; font-size:13px;">Book →</a></div>
+            </div>
+          </div>
+          <div class="exp-full-card">
+            <div class="card-img"><img src="images/LK5028E069-08-E.webp" alt="Elephant Gathering"/></div>
+            <div class="card-body">
+              <span class="card-tag">Wildlife</span>
+              <h3>Minneriya Elephant Gathering</h3>
+              <p>Witness hundreds of wild elephants converge on a drying tank in one of nature's great spectacles, at its peak from July to October each year.</p>
+              <div class="exp-card-footer"><div class="exp-duration">Duration: <span>Half day</span></div><a href="contact.html" class="btn-primary" style="padding:8px 16px; font-size:13px;">Book →</a></div>
+            </div>
+          </div>
+          <div class="exp-full-card">
+            <div class="card-img"><img src="images/40d6bfb92083e9334e912de9f68b063a3fc16212-1920x1080.avif" alt="Whale Watching"/></div>
+            <div class="card-body">
+              <span class="card-tag">Marine</span>
+              <h3>Blue Whale Watching</h3>
+              <p>Join a small-boat excursion off Mirissa or Trincomalee to spot the world's largest animal in the warm waters of the Indian Ocean.</p>
+              <div class="exp-card-footer"><div class="exp-duration">Duration: <span>Morning (4–5 hrs)</span></div><a href="contact.html" class="btn-primary" style="padding:8px 16px; font-size:13px;">Book →</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CULTURAL -->
+      <div class="exp-category">
+        <div class="exp-category-header">
+          <div><span class="section-label" style="margin-bottom:4px;">🏛️ Culture</span><h2>Heritage & History</h2></div>
+          <a href="contact.html" class="see-all">Book a Tour →</a>
+        </div>
+        <div class="exp-cards">
+          <div class="exp-full-card">
+            <div class="card-img"><img src="images/sunset-on-pidurangala-rock-sigiriya-sri-lanka.jpg" alt="Sigiriya Sunrise"/></div>
+            <div class="card-body">
+              <span class="card-tag">Heritage</span>
+              <h3>Sigiriya Sunrise Climb</h3>
+              <p>Ascend the Rock Fortress before the crowds arrive. Watch light wash over the ancient water gardens and stretching jungle from the summit terrace.</p>
+              <div class="exp-card-footer"><div class="exp-duration">Duration: <span>Half day (early)</span></div><a href="contact.html" class="btn-primary" style="padding:8px 16px; font-size:13px;">Book →</a></div>
+            </div>
+          </div>
+          <div class="exp-full-card">
+            <div class="card-img"><img src="images/39989465_1016286145210587_1559765279607619584_n-1.webp" alt="Kandy Perahera"/></div>
+            <div class="card-body">
+              <span class="card-tag">Festival</span>
+              <h3>Esala Perahera, Kandy</h3>
+              <p>The grandest Buddhist festival in the world — decorated elephants, fire dancers, and drummers parading through the ancient streets of Kandy across ten nights in July/August.</p>
+              <div class="exp-card-footer"><div class="exp-duration">Duration: <span>Seasonal event</span></div><a href="contact.html" class="btn-primary" style="padding:8px 16px; font-size:13px;">Book →</a></div>
+            </div>
+          </div>
+          <div class="exp-full-card">
+            <div class="card-img"><img src="images/44.jpg" alt="Village Cooking"/></div>
+            <div class="card-body">
+              <span class="card-tag">Food & Culture</span>
+              <h3>Village Cooking Class</h3>
+              <p>Join a local family in their home kitchen. Grind spices by hand, learn to make hoppers and kottu, and eat lunch together on a shaded veranda.</p>
+              <div class="exp-card-footer"><div class="exp-duration">Duration: <span>3–4 hours</span></div><a href="contact.html" class="btn-primary" style="padding:8px 16px; font-size:13px;">Book →</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ADVENTURE -->
+      <div class="exp-category">
+        <div class="exp-category-header">
+          <div><span class="section-label" style="margin-bottom:4px;">🏄 Adventure</span><h2>Active & Outdoors</h2></div>
+          <a href="contact.html" class="see-all">Book an Activity →</a>
+        </div>
+        <div class="exp-cards">
+          <div class="exp-full-card">
+            <div class="card-img"><img src="images/Tea-Plantations.jpg" alt="Tea Trail Walk"/></div>
+            <div class="card-body">
+              <span class="card-tag">Trekking</span>
+              <h3>Tea Estate Trail Walk</h3>
+              <p>Walk the emerald terraces of Nuwara Eliya with a retired tea plucker who'll share the rhythm and stories of a life lived among the bushes.</p>
+              <div class="exp-card-footer"><div class="exp-duration">Duration: <span>Half day</span></div><a href="contact.html" class="btn-primary" style="padding:8px 16px; font-size:13px;">Book →</a></div>
+            </div>
+          </div>
+          <div class="exp-full-card">
+            <div class="card-img"><img src="images/bd_9218ee6e43.webp" alt="Diving Trincomalee"/></div>
+            <div class="card-body">
+              <span class="card-tag">Water Sports</span>
+              <h3>Reef Diving, Trincomalee</h3>
+              <p>Plunge into warm, gin-clear waters to explore Pigeon Island's coral gardens, sea turtles, blacktip reef sharks, and tropical fish in vivid abundance.</p>
+              <div class="exp-card-footer"><div class="exp-duration">Duration: <span>Full day</span></div><a href="contact.html" class="btn-primary" style="padding:8px 16px; font-size:13px;">Book →</a></div>
+            </div>
+          </div>
+          <div class="exp-full-card">
+            <div class="card-img"><img src="images/Ambewela-Ella-Train-min.webp" alt="Scenic Train"/></div>
+            <div class="card-body">
+              <span class="card-tag">Scenic Journey</span>
+              <h3>Highland Railway, Ella to Kandy</h3>
+              <p>Rated one of the world's most beautiful train journeys. Wind through tea country, cloud forest, and mountain passes on a vintage blue train.</p>
+              <div class="exp-card-footer"><div class="exp-duration">Duration: <span>7 hours</span></div><a href="contact.html" class="btn-primary" style="padding:8px 16px; font-size:13px;">Book →</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WHY HIGHLIGHTS -->
+  <div class="highlight-strip">
+    <div class="container">
+      <div class="highlight-strip-grid">
+        <div class="hl-card"><span class="hl-icon">🧭</span><h4>Expert-led Only</h4><p>Every experience is led by a qualified local specialist, never a generic tour driver.</p></div>
+        <div class="hl-card"><span class="hl-icon">👥</span><h4>Small Groups</h4><p>Maximum 8 guests per guide, ensuring genuine access and personal attention.</p></div>
+        <div class="hl-card"><span class="hl-icon">🚐</span><h4>Comfortable Transport</h4><p>Air-conditioned vehicles maintained to the highest safety and comfort standards.</p></div>
+        <div class="hl-card"><span class="hl-icon">🍽️</span><h4>Meals Included</h4><p>Most experiences include home-cooked Sri Lankan meals from trusted local partners.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <section style="background:var(--green-mid); padding:64px 0; text-align:center;">
+    <div class="container">
+      <h2 style="color:var(--white); margin-bottom:12px;">Design Your Own Adventure</h2>
+      <p style="color:rgba(255,255,255,0.75); font-size:17px; margin-bottom:32px;">Mix and match experiences into a personalised itinerary.</p>
+      <a href="contact.html" class="btn-primary" style="background:var(--gold); color:var(--green-dark);">Start Planning →</a>
+    </div>
+  </section>
+
+ <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="nav-logo-text">Ceylon<span style="color:var(--gold)">Wonders</span></span>
+          <p>Crafting genuine Sri Lankan travel experiences since 2012.</p>
+          <div class="footer-social">
+            <a href="#" class="fb" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.268h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+            </a>
+            <a href="#" class="ig" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="#" class="tw" aria-label="X (Twitter)">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.713 5.894 5.45-5.894zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="yt" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col"><h4>Explore</h4><ul><li><a href="destinations.html">Destinations</a></li><li><a href="experiences.html">Experiences</a></li><li><a href="gallery.html">Gallery</a></li></ul></div>
+        <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div class="footer-col"><h4>Contact</h4><ul><li><a href="#">📍 Colombo, Sri Lanka</a></li><li><a href="#">📞 +94 11 234 5678</a></li><li><a href="#">✉️ hello@ceylonwonders.lk</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><span>© 2025 Ceylon Wonders. All rights reserved.</span><span>Designed with ❤️ in Sri Lanka</span></div>
+    </div>
+  </footer>
+  <script>document.getElementById('hamburger').addEventListener('click', () => { document.getElementById('nav-mobile').classList.toggle('open'); });</script>
+</body>
+</html>
